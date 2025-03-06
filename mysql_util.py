@@ -1,4 +1,4 @@
-import mysql.connector
+import mysql-connector-python
 import os
 from glob import glob
 import json
