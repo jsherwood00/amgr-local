@@ -1,0 +1,46 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - 7869:11434
+    volumes:
+      - .:/code
+      - ./ollama/ollama:/root/.ollama
+    container_name: ollama
+    pull_policy: always
+    tty: true
+    restart: always
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+      - OLLAMA_HOST=0.0.0.0
+    networks:
+      - internal
+  
+  mysql:
+    image: mysql:8.0.41
+    volumes:
+      - ./mysql/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: dy1l]bVx6I&fT0{vHZ2
+      MYSQL_DATABASE: AMGR
+    ports:
+      - "4000:3306"
+    networks:
+      - internal
+
+  chroma:
+    image: chromadb/chroma
+    volumes:
+      - ./chroma/chroma:/root/.chroma
+    ports:
+      - "8000:8000"
+    networks:
+      - internal
+
+volumes:
+  mysql-data:
+  chroma_data:
+  
+
+networks:
+  internal:

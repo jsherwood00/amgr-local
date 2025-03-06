@@ -1,0 +1,20 @@
+*** Long chatbot comment ***
+
+This was too long to keep in the python file, so putting it here, for reference:
+
+        """ Start with num_products products, narrow down to num_print products
+        to print for the user based on which products the best matching
+        reviews belong to. Note that with this approach, it isn't about 
+        which product has the best matching reviews to what the user has 
+        specified, since each review is embedded separately. Rather, it is
+        which products the best matching reviews belong to."""
+
+        """ A limitation of the current approach is that if the asin != parent_asin,
+        the reviews are not searched over: the subset of review vectors searched over
+        is the subset that has metadata matching the parent_asin list, and since the dataset
+        does not provide parent_asins per review, a separate table was created. In future,
+        this could be modified to also search over a subset where elements dont have to have
+        the same asin as parent_asin, but this is currently incompatible with the batch processing
+        approach, since the asin -> parent_asin mapping cant be done in a list, as the list
+        returned by an sql query on returning parent_asins where asins are in a list would not return
+        a non-unique list (1:1 for parent_asin: asin), see chroma_util.py vdb_insert 2nd half. """

@@ -1,0 +1,6 @@
+source/
+.vscode/
+__pycache__
+mysql/
+ollama/
+chroma/
