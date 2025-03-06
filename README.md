@@ -96,3 +96,5 @@ This project is currently in development. There are several tasks under developm
     a limitation, just one approach. Another would be to embed all reviews for a product together, so the user query
     would be compared to a set of "summarized" product reviews, where each embedding it is compared to is 1 product's
     embedding for all of its reviews.
+
+**Credits**: this is an individual project and an extension of work done in a Fall 2024 Big Data course. That project can be viewed here: https://github.com/jsherwood00/amgr, and was developed by a 5-person team and with Professor Koochaksaraei's mentorship. All team members are credited there.
