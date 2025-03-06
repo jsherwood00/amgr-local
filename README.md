@@ -34,7 +34,7 @@ Prerequisite: Install docker (varies by OS): `https://docs.docker.com/engine/ins
 
 2) Place the downloaded data (.jsonl.gz files), into the root/new_data folder, **then unzip them, so the format is .jsonl.**
 
-3) On first run, create a virtual environment and install the requirements before running step 3:
+3) On first run, create a virtual environment and install the requirements before running step 4:
 
         a) `python3 -m venv <your_venv_name>`
    
