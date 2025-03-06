@@ -1,6 +1,8 @@
 **Setup**
 
-1) In the root project directory, run `docker compose up`
+Prerequisite: Install docker (varies by OS): `https://docs.docker.com/engine/install/`
+
+1) In the root project directory, run `docker compose up`. Note: you may have to run with elevated privileges (sudo on Linux).
 
     This will start mysql and chroma containers. Do not modify their data folders,
     which are also found in the root project directory.
