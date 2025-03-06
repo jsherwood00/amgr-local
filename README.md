@@ -24,27 +24,32 @@ Prerequisite: Install docker (varies by OS): `https://docs.docker.com/engine/ins
 
 **ETL instructions (steps 1-3 for first time; 1, 3 after setup)**
 
-0) The full dataset can be found at https://amazon-reviews-2023.github.io/, download the meta / review data of your choice.
+*Note: Step 1 can be skipped if you are happy with the gift cards category included in this repository, just make sure to unzip them (step 2).*
+1) The full dataset can be found at https://amazon-reviews-2023.github.io/, download the meta / review data of your choice.
     You must upload both the review and meta data for any category you pick, and not only one, or the chatbot will not work.
-    It is recommended to start with a small category, such as giftcards. The ETL time should be ~5 minutes, depending on
-    your local computer specs. Larger files can take several hours to process, due in large part to the slow speed of the
-    chroma upload.
+    It is recommended to start with a small category, such as giftcards. The speed depends mostly on the local computer's CPU
+    , assuming enough RAM. The development computer has a relatively fast CPU: a Ryzen 7 9700x, and the ETL process for the
+   gift cards category takes ~15 minutes: you will have to run etl.py, wait 15 minutes, then be able to run chatbot.py and
+   interact with the data.
 
-1) Place the downloaded data (.jsonl.gz files), into the root/new_data folder, then unzip them, so the format is .jsonl
+2) Place the downloaded data (.jsonl.gz files), into the root/new_data folder, **then unzip them, so the format is .jsonl.**
 
-2) On first run, create a virtual environment and install the requirements before running step 3:
+3) On first run, create a virtual environment and install the requirements before running step 3:
+
         a) `python3 -m venv <your_venv_name>`
+   
         b)
             Mac/Linux: `source <your_venv_name>/bin/activate`
             Windows PowerShell: `.\<your_venv_name>\Scripts\Activate.ps1`
+   
         c) pip install -r requirements.txt
 
-3) From the root project directory, run `python etl.py`
+5) From the root project directory, run `python etl.py`
 
     This will structure the raw data into the MySQL and Chroma databases, which the chatbot will then have access to.
     The upload process varies per
 
-4) Optional: to reset the database at any point, deleting all structured data, run `python reset.py`
+6) Optional: to reset the database at any point, deleting all structured data, run `python reset.py`
 
 
 **Future work**
